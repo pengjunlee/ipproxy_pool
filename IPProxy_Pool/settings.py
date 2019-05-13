@@ -2,9 +2,9 @@
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 
-# 代理保存到Redis key 格式化字符串
+# 保存可用代理的 Redis key 格式化字符串
 PROXIES_REDIS_FORMATTER = 'proxies::{}'
-# 已经存在的HTTP代理和HTTPS代理集合
+# 已经存在的HTTP代理和HTTPS代理
 PROXIES_REDIS_EXISTED = 'proxies::existed'
 
 # 最多连续失败几次
