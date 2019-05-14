@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import time
 from lxml import etree
 from ipproxy import IPProxy
 from proxy_util import strip, request_page, logger
@@ -15,6 +14,7 @@ class ProxyBaseCrawler(object):
     def _start_crawl(self):
         raise NotImplementedError
 
+
 class KuaiDailiCrawler(ProxyBaseCrawler):  # 快代理
     def _start_crawl(self):
         for url_dict in self.urls:
@@ -25,8 +25,6 @@ class KuaiDailiCrawler(ProxyBaseCrawler):  # 快代理
                 if 'page' in url_dict.keys() and str.find(url_dict['url'], '{}') != -1:
                     url = url_dict['url'].format(str(url_dict['page']))
                     url_dict['page'] = url_dict['page'] + 1
-                    if url_dict['page'] == 3:
-                        has_more = False
                 else:
                     url = url_dict['url']
                     has_more = False
@@ -45,6 +43,7 @@ class KuaiDailiCrawler(ProxyBaseCrawler):  # 快代理
                 if tr_list is None:
                     has_next_page = False
 
+
 class FeiyiDailiCrawler(ProxyBaseCrawler):  # 飞蚁代理
     def _start_crawl(self):
         for url_dict in self.urls:
@@ -55,8 +54,6 @@ class FeiyiDailiCrawler(ProxyBaseCrawler):  # 飞蚁代理
                 if 'page' in url_dict.keys() and str.find(url_dict['url'], '{}') != -1:
                     url = url_dict['url'].format(str(url_dict['page']))
                     url_dict['page'] = url_dict['page'] + 1
-                    if url_dict['page'] == 3:
-                        has_more = False
                 else:
                     url = url_dict['url']
                     has_more = False
@@ -73,7 +70,6 @@ class FeiyiDailiCrawler(ProxyBaseCrawler):  # 飞蚁代理
                     has_more = False
 
 
-
 class WuyouDailiCrawler(ProxyBaseCrawler):  # 无忧代理
     def _start_crawl(self):
         for url_dict in self.urls:
@@ -84,8 +80,6 @@ class WuyouDailiCrawler(ProxyBaseCrawler):  # 无忧代理
                 if 'page' in url_dict.keys() and str.find(url_dict['url'], '{}') != -1:
                     url = url_dict['url'].format(str(url_dict['page']))
                     url_dict['page'] = url_dict['page'] + 1
-                    if url_dict['page'] == 3:
-                        has_more = False
                 else:
                     url = url_dict['url']
                     has_more = False
@@ -112,8 +106,6 @@ class IPhaiDailiCrawler(ProxyBaseCrawler):  # IP海代理
                 if 'page' in url_dict.keys() and str.find(url_dict['url'], '{}') != -1:
                     url = url_dict['url'].format(str(url_dict['page']))
                     url_dict['page'] = url_dict['page'] + 1
-                    if url_dict['page'] == 3:
-                        has_more = False
                 else:
                     url = url_dict['url']
                     has_more = False
@@ -129,6 +121,7 @@ class IPhaiDailiCrawler(ProxyBaseCrawler):  # IP海代理
                 if tr_list is None:
                     has_more = False
 
+
 class YunDailiCrawler(ProxyBaseCrawler):  # 云代理
     def _start_crawl(self):
         for url_dict in self.urls:
@@ -139,8 +132,6 @@ class YunDailiCrawler(ProxyBaseCrawler):  # 云代理
                 if 'page' in url_dict.keys() and str.find(url_dict['url'], '{}') != -1:
                     url = url_dict['url'].format(str(url_dict['page']))
                     url_dict['page'] = url_dict['page'] + 1
-                    if url_dict['page'] == 3:
-                        has_more = False
                 else:
                     url = url_dict['url']
                     has_more = False
@@ -167,8 +158,6 @@ class XiCiDailiCrawler(ProxyBaseCrawler):  # 西刺代理
                 if 'page' in url_dict.keys() and str.find(url_dict['url'], '{}') != -1:
                     url = url_dict['url'].format(str(url_dict['page']))
                     url_dict['page'] = url_dict['page'] + 1
-                    if url_dict['page'] == 3:
-                        has_more = False
                 else:
                     url = url_dict['url']
                     has_more = False
