@@ -61,9 +61,9 @@ def run_xici():
 
 
 if __name__ == '__main__':
-    # run_xici()
-    # run_iphai()
+    run_xici()
+    run_iphai()
     run_kuai()
-    # run_feiyi()
-    # run_yun()
-    # run_wuyou()
+    run_feiyi()
+    run_yun()
+    run_wuyou()
